@@ -5,17 +5,18 @@ class CustomContainer extends StatelessWidget {
   final Widget? prefixIcon;
   double? width;
   double? height;
+  final Color? backgroundColor;
 
-  CustomContainer(this.prefixIcon);
+  CustomContainer(this.prefixIcon,this.backgroundColor);
 
   @override
   Widget build(BuildContext context) {
     return Container(
       child: prefixIcon,
-      height: 60,
-      width: 60,
+      height: 50,
+      width: 50,
       decoration:  BoxDecoration(
-        color: AppColors.lightGray, // Change the color as needed
+        color: backgroundColor, // Change the color as needed
         borderRadius: BorderRadius.circular(20), // Adjust the radius as needed
       ),
 

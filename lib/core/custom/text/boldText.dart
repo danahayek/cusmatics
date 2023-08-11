@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+
+import '../../constant/Colors.dart';
+
 class CustomText extends StatelessWidget {
   final String text;
   FontWeight? fontWeight;
@@ -15,18 +18,34 @@ class CustomText extends StatelessWidget {
       text,textAlign:textAlign,style: TextStyle(fontSize: fontSize,fontWeight: fontWeight,color: color),);
   }
 }
+class SubTitleText extends StatelessWidget{
+  final String subTitle;
 
-Widget CustomTextBolodRed12(String text){
-  return CustomText(text: text,fontSize: 12,fontWeight: FontWeight.bold,color: Colors.red,);
+  const SubTitleText({super.key, required this.subTitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return Text(
+      subTitle,
+      style: const TextStyle(fontSize: 17,
+          color: AppColors.lightPink
+      ),
+    );
+  }
+
 }
-
 class titleText extends StatelessWidget {
   final String title;
 
   const titleText({required this.title});
   @override
   Widget build(BuildContext context) {
-    return Text(title,textAlign:TextAlign.center,style: TextStyle(fontSize: 16,fontWeight: FontWeight.normal,color: Colors.grey),);
+    return Text(
+      title,
+      textAlign:TextAlign.center,
+      style: TextStyle(fontSize: 15,
+          fontWeight: FontWeight.normal,
+          fontFamily: 'Bahij_TheSansArabic-Plain',
+          color: Colors.blueGrey),);
   }
 }
-

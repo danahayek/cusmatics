@@ -29,7 +29,6 @@ class AppText {
   static String forgetPassword2 = " نسيت كلمة المرور";
 
 
-
   static String validateWrongTxt = "املا الحقل";
   static String validateWrongNo = "ادخل رقم هاتف صالح للاستخدام";
   static String validateWrongemail = "ادخل ايميل صالح للاستخدام";
@@ -41,7 +40,7 @@ class AppText {
   static String flagTxtField = "اختيار دولة";
   static String passTxtFeild = "كلمة المرور";
   static String confirmPassTxtFeild = "تاكيد كلمة المرور";
-  static String AcceptTearms  = "اوافق على الشروط والأحكام وسياسة الخصوصية";
+  static String AcceptTearms = "اوافق على الشروط والأحكام وسياسة الخصوصية";
   static String forgetPassMsg = "ستصلك رسالة عبر المحمول فيها كلمة المرور الخاصة بك";
 
   static String send = "ارسال";
@@ -56,14 +55,38 @@ class AppText {
   static String more = 'المزيد';
 
 
-
-
   static String beauty = "تجميل";
   static String jewelry = "اكسسوارات";
   static String baby = "أطفال";
   static String nature = "طبيعة";
   static String pharmacy = "صيدلية";
   static String eyes = "بصريات";
+
+
+  static String radio = "راديو سوني";
+  static String city = "نابلس";
+  static String addPiece = "اضف قطعة";
+  static String home = "الرئيسية";
+
+
+  static String clothsCat="ملابس واكسسوارات";
+  static String furnitureCat ='أثاث مستعمل';
+  static String electronicCat='الكترونيات وكهربائيات';
+  static String babeisCat='أطفال';
+  static String carsCat='سيارات';
+  static String apartmentsCat='شقق سكنية';
+  static String sellersCat='شروات';
+  static String donationsCat='تبرعات';
+
+
+  static String homefurniture='الأثاث المنزلي';
+  static String office='أثاث المكتب';
+  static String garden='أثاث الحدائق';
+  static String accessories='اكسسوارات المنزل';
+  static String decoration='ديكور';
+
+
+
 
 
 

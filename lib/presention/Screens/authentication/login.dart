@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:untitled/presention/Screens/Home/homeC.dart';
+import 'package:untitled/presention/Screens/Home/HomeScreen.dart';
+
 import 'package:untitled/presention/Screens/authentication/ConfirmAccount.dart';
 import '../../../core/constant/Colors.dart';
 import '../../../core/constant/ImagesPath.dart';
@@ -8,6 +9,7 @@ import '../../../core/constant/Strings.dart';
 import '../../../core/custom/button/buttonCustom.dart';
 import '../../../core/custom/text/boldText.dart';
 import '../../../core/custom/textField/textformfield.dart';
+import '../bottomNavigationBar/BottomNavBar.dart';
 import 'createAccount.dart';
 import 'forgetPassword.dart';
 
@@ -165,7 +167,7 @@ class _loginState extends State<login> {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => HomeC(),
+                                    builder: (context) => NavigationBarScreen(),
                                   ),
                                 );                              }
                             },

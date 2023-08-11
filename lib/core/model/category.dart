@@ -1,11 +1,15 @@
-class Category{
+
+class CategoryModel{
   String image;
   String title;
-  double price;
-  double oldPrice;
+  String price;
+  String oldPrice;
   String city;
-  String address;
-  Function() more;
 
-  Category(this.image, this.title, this.price, this.oldPrice, this.city,this.address,this.more);
+  CategoryModel(this.image,
+      this.title,
+      this.price,
+      this.oldPrice,
+      this.city
+      );
 }
