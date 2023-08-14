@@ -42,7 +42,7 @@ class CustomHomeProductItem extends StatelessWidget{
                 child: InkWell(
                   onTap: () {},
                   child: Row(children: [
-                    CustomProductItem(product, 170,340,)
+                    CustomProductItem(product, 170,200,)
                   ]),
                 ),
               );

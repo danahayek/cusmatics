@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../presention/Screens/Home/notification.dart';
 import '../../constant/Colors.dart';
 import '../container/customC.dart';
 
@@ -26,8 +27,18 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
       child:
           Row(
             children: [
-            CustomContainer(
-                Icon(Icons.notifications_active_outlined, color: AppColors.black, size: 25),AppColors.lightGray,50,50),
+            GestureDetector(
+              onTap: (){
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => NotificationWidget(),
+                  ),
+                );
+              },
+              child: CustomContainer(
+                  Icon(Icons.notifications_active_outlined, color: AppColors.black, size: 25),AppColors.lightGray,50,50),
+            ),
             SizedBox(width: 10,),
             CustomContainer(
                 Icon(Icons.favorite_border, color: AppColors.black, size: 25),AppColors.lightGray,50,50),
