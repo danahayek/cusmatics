@@ -20,14 +20,14 @@ class CustomHomeProductItem extends StatelessWidget{
           children: [
             SizedBox(width:20 ,),
             SubTitleText(subTitle: AppText.more),
-            SizedBox(width:210 ,),
+            SizedBox(width:190 ,),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 23
               ),
               child: CustomText(
                 text: title?? '',
                 fontWeight: FontWeight.bold,
-                fontSize: 19,
+                fontSize: 17,
               ),
             ),
           ],
@@ -42,7 +42,7 @@ class CustomHomeProductItem extends StatelessWidget{
                 child: InkWell(
                   onTap: () {},
                   child: Row(children: [
-                    CustomProductItem(product)
+                    CustomProductItem(product, 170,340,)
                   ]),
                 ),
               );

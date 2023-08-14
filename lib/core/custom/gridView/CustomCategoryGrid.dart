@@ -7,7 +7,6 @@ import '../../model/product.dart';
 class CustomCategoryGrid extends StatelessWidget {
     Product pro;
 
-
    CustomCategoryGrid(this.pro);
 
   @override

@@ -35,6 +35,22 @@ class _HomeScreenState extends State<HomeScreen> {
     CategoryModel(ImagesPath.chairsC, AppText.radio, '66', '56', AppText.city),
   ];
   late final CategoryModel _category;
+
+  // List<String> search= [];
+  // void _runFilter(String enteredKeyword) {
+  //   List<Map<String, dynamic>> results = [];
+  //   if (enteredKeyword.isEmpty) {
+  //     // if the search field is empty or only contains white-space, we'll display all users
+  //     results = search;
+  //   } else {
+  //     results = search
+  //         .where((user) =>
+  //         user["name"].toLowerCase().contains(enteredKeyword.toLowerCase()))
+  //         .toList();
+  //     // we use the toLowerCase() method to make it case-insensitive
+  //   }
+  //
+  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,11 +66,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(
                       width: 10,
                     ),
-                     CustomContainer(Icon(Icons.notifications_active, color: AppColors.black, size: 30,),AppColors.lightGray),
+                     CustomContainer(Icon(Icons.notifications_active, color: AppColors.black, size: 30,),AppColors.lightGray,50,50),
                     const SizedBox(width: 8,),
-                     CustomContainer(Icon(Icons.favorite_border, color: AppColors.black, size: 30,),AppColors.lightGray),
+                     CustomContainer(Icon(Icons.favorite_border, color: AppColors.black, size: 30,),AppColors.lightGray,50,50),
                     const SizedBox(width: 8,),
-                     CustomContainer(Icon(Icons.notifications_none, color: AppColors.black, size: 30,),AppColors.lightGray),
+                     CustomContainer(Icon(Icons.notifications_none, color: AppColors.black, size: 30,),AppColors.lightGray,50,50),
                     const SizedBox(width: 100,),
                     Image.asset(ImagesPath.splashImage, width: 75, height: 75,),
                   ],
@@ -62,7 +78,7 @@ class _HomeScreenState extends State<HomeScreen> {
               ), //bar
               Padding(
                 padding: const EdgeInsets.all(6.0),
-                child: CustomSearchBar(controller: controller,),
+                child: CustomSearchBar(controller: controller),
               ), //search
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 20

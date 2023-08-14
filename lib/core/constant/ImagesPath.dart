@@ -12,12 +12,20 @@ class ImagesPath {
   static String pharmacy = "assets/images/pharmacy.svg";
   static String nature = "assets/images/nature.svg";
 
-  static String radioC = "assets/images/radio.svg";
-  static String chairsC = "assets/images/chair.svg";
-  static String babiesC = "assets/images/babie.svg";
+  static String radioC = "assets/images/radioCC.png";
+  static String chairsC = "assets/images/chairCC.png";
+  static String babiesC = "assets/images/children.png";
 
   static String vector = "assets/images/Vector.svg";
   static String shekel = "assets/images/shekel.svg";
+
+  static String coffee_table = "assets/images/coffee_table.png";
+  static String phone_table = "assets/images/phone_table.png";
+  static String shoes_table = "assets/images/shoes_table.png";
+  static String sofa = "assets/images/sofa.png";
+  static String table3 = "assets/images/table3.png";
+  static String chairK = "assets/images/chairK.png";
+
 
 
 

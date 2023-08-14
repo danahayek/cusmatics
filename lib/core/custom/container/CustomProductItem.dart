@@ -11,16 +11,18 @@ class CustomProductItem extends StatelessWidget{
 
 
   final CategoryModel product;
-  CustomProductItem(this.product);
+  double height;
+  double width;
+  CustomProductItem(this.product,this.width,this.height);
 
 
   @override
   Widget build(BuildContext context) {
     return Container(
-        width: 170,
-        height: 340,
+        width: width,
+        height: height,
         decoration: BoxDecoration(
-          color: Colors.white,
+          color: AppColors.white,
           borderRadius: BorderRadius.circular(2),
           boxShadow: [
             BoxShadow(
@@ -79,38 +81,38 @@ class CustomProductItem extends StatelessWidget{
                         ),
                       ],),
                     const SizedBox(width: 5,),
-                    SvgPicture.asset(product.image),
+                    Image.asset(product.image,width: 75,height: 75,),
                   ],),
                 ]),
             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: CustomText(text:product.title, fontWeight: FontWeight.bold, fontSize: 20),
+              padding: const EdgeInsets.all(5.0),
+              child: CustomText(text:product.title, fontWeight: FontWeight.bold, fontSize: 18),
             ),
             Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: const EdgeInsets.all(5.0),
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: [
                   Text(
                     product.oldPrice as String,
                     style: const TextStyle(
-                      fontSize: 18,
+                      fontSize: 15,
                       decoration: TextDecoration.lineThrough,
                       color: AppColors.lightGray,
                     ),
                   ),
-                  const SizedBox(width: 10),
+                  const SizedBox(width: 8),
                   SvgPicture.asset(ImagesPath.shekel, width: 15,height: 10,),
-                  const SizedBox(width: 5),
+                  const SizedBox(width: 3),
                   Text(
                     product.price as String,
-                    style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold,color: AppColors.pink),
+                    style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold,color: AppColors.pink),
                   ),
                 ],),
             ),
             Container(
-              width: 100,
-              height: 25,
+              width: 70,
+              height: 20,
               decoration: BoxDecoration(
                 shape: BoxShape.rectangle,
                 color: AppColors.pink,

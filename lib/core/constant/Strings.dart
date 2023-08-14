@@ -85,6 +85,18 @@ class AppText {
   static String accessories='اكسسوارات المنزل';
   static String decoration='ديكور';
 
+  static String table3= 'طاولات ضيافة عدد ٣';
+  static String coffee_table='طاولة فناجين القهوة';
+  static String sofa='اريكة صالة ثنائية';
+  static String chairK= 'كرسي ملوكي';
+  static String shoes_table='جزامة كلاسيك';
+  static String phone_table='طاولة تليفون انتيكا';
+
+  static String order_products='ترتيب المنتجات';
+  static String high_price='الأعلى سعراً';
+  static String least_price='الأقل سعراً';
+  static String orderBtn='ترتيب';
+
 
 
 

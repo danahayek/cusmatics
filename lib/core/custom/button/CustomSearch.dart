@@ -13,10 +13,11 @@ class CustomSearchBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       controller: controller,
-
+      onTap: searchQuery,
 
       decoration: InputDecoration(
         hintText: AppText.search,
+
         prefixIcon: Icon(Icons.search),
         border: OutlineInputBorder(
 

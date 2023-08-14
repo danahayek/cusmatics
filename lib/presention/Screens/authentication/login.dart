@@ -109,48 +109,6 @@ class _loginState extends State<login> {
                    ),
                         padding:
                         const EdgeInsets.only(left:15.0,right: 15.0),
-/*
-                        child: TextFormField(
-                          controller: textEditingController1,
-                          maxLength: 10,
-
-                          keyboardType: TextInputType.phone,
-                          validator:(value) {
-                            if (value == null || value.isEmpty &&!_isValidMobileNumber(value)) {
-                              return 'املا الحقل';
-                            }
-                          },
-                            onChanged: (value) {
-                            _textFieldValue = value;
-                            setState(() {
-                            _inputText = value;
-                            _isFocused = true;
-                            });
-                            },
-                            decoration:  InputDecoration(
-                            counterText:'',
-                            enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: _isFocused ? AppColors.lightPink : AppColors.lightGray,
-                            width: 1,),
-                            ),
-                            // Define the hint text and icon for the input field
-                            hintText: "رقم الهاتف",
-                            prefixIcon: Icon(Icons.phone_android) ,
-                            errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.red, // Set the error border color to red
-                                width: 2,
-                              ),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.red, // Set the error border color to red
-                                width: 2,
-                              ),
-                            ),
-                          ),
-                        ),
-*/
                       ),
                       SizedBox(height: 20,),
                       Padding(
