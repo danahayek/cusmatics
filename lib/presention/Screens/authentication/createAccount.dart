@@ -140,33 +140,6 @@ class _CreateAccountState extends State<CreateAccount> {
                               prefixIcon: Icon(Icons.flag),
                             )
 
-/*
-                          TextFormField(
-                            readOnly: true,
-                            decoration: InputDecoration(
-                                labelText: 'اضغط لاختيار دولة',
-                                prefixIcon: Icon(
-                                  Icons.flag,
-                                  color: AppColors.lightPink,
-                                ),
-                                border: OutlineInputBorder(),
-                                enabledBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: AppColors
-                                        .lightPink, // Change the border color here
-                                  ),
-                                )),
-                            onTap: () async {
-                              await showModalBottomSheet<int>(
-                                context: context,
-                                builder: (BuildContext context) {
-                                  return _buildItemPicker();
-                                },
-                              );
-                              print("$_selectedItem");
-                            },
-                          ),
-*/
                         ),
                         SizedBox(
                           height: 10,
@@ -193,48 +166,6 @@ class _CreateAccountState extends State<CreateAccount> {
                           ),
                           padding:
                           const EdgeInsets.only(left:15.0,right: 15.0),
-/*
-                        child: TextFormField(
-                          controller: textEditingController1,
-                          maxLength: 10,
-
-                          keyboardType: TextInputType.phone,
-                          validator:(value) {
-                            if (value == null || value.isEmpty &&!_isValidMobileNumber(value)) {
-                              return 'املا الحقل';
-                            }
-                          },
-                            onChanged: (value) {
-                            _textFieldValue = value;
-                            setState(() {
-                            _inputText = value;
-                            _isFocused = true;
-                            });
-                            },
-                            decoration:  InputDecoration(
-                            counterText:'',
-                            enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(color: _isFocused ? AppColors.lightPink : AppColors.lightGray,
-                            width: 1,),
-                            ),
-                            // Define the hint text and icon for the input field
-                            hintText: "رقم الهاتف",
-                            prefixIcon: Icon(Icons.phone_android) ,
-                            errorBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                                color: Colors.red, // Set the error border color to red
-                                width: 2,
-                              ),
-                            ),
-                            focusedErrorBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.red, // Set the error border color to red
-                                width: 2,
-                              ),
-                            ),
-                          ),
-                        ),
-*/
                         ),
                         SizedBox(
                           height: 10,
@@ -319,56 +250,39 @@ class _CreateAccountState extends State<CreateAccount> {
                               ),
                             )
                         ),
+                        SizedBox(height: 15,),
+                        CheckboxListTile(
+                          title: Text(AppText.AcceptTearms,textAlign: TextAlign.end,),
+                          value: _isChecked,
+                          onChanged: (bool? value) {
+                            //     customshowModalBottomSheet(TermsWidget( controllerScroll: scrollController ,));
+                            showModalBottomSheet(context: context,
+                                backgroundColor: AppColors.white,
+                                isScrollControlled: true,
+                                shape: const RoundedRectangleBorder( // <-- SEE HERE
+                                  borderRadius: BorderRadius.vertical(
+                                    top: Radius.circular(25.0),
+                                  ),)
+                                ,builder: (BuildContext context)   =>  DraggableScrollableSheet(
+                                    initialChildSize: 0.6, //set this as you want
+                                    maxChildSize: 0.9, //set this as you want
+                                    minChildSize: 0.5, //set this as you want
+                                    expand: false,
+                                    builder: (context, scrollController) {
+
+                                      return TermsWidget( controllerScroll: scrollController ,/*onTapConfierm(value){}*/); //whatever you're returning, does not have to be a Container
+                                    }
+                                ));
+                            setState(() {
+                              _isChecked = value ?? false;
+                            });},
+                        ),
+
                       ],
                     ),
                   ),
+
                 ),
-
-/*
-                CheckboxListTile(
-                  title: Text('اوافق على الشروط والأحكام وسياسة الخصوصية',textAlign: TextAlign.end,),
-                  value: _isChecked,
-                  onChanged: (bool? value) {
-                    //     customshowModalBottomSheet(TermsWidget( controllerScroll: scrollController ,));
-                    showModalBottomSheet(context: context,
-                        backgroundColor: AppColors.white,
-                        isScrollControlled: true,
-                        shape: const RoundedRectangleBorder( // <-- SEE HERE
-                          borderRadius: BorderRadius.vertical(
-                            top: Radius.circular(25.0),
-                          ),)
-                        ,builder: (BuildContext context)   =>  DraggableScrollableSheet(
-                            initialChildSize: 0.6, //set this as you want
-                            maxChildSize: 0.9, //set this as you want
-                            minChildSize: 0.5, //set this as you want
-                            expand: false,
-                            builder: (context, scrollController) {
-
-                              return TermsWidget(
-                                  controllerScroll: scrollController
-                                  ,/onTapConfierm(value){}/); //whatever you're returning, does not have to be a Container
-                            }
-                        ));
-                    setState(() {
-                      _isChecked = value ?? false;
-                    });},
-                ),
-*/
-
-                // CheckboxListTile(
-                //   title: Text(
-                //     AppText.privacyPolicy,
-                //     textAlign: TextAlign.end,
-                //   ),
-                //   value: _isChecked,
-                //   onChanged: (bool? value) {
-                //     showBottomSheet(
-                //         context: context, builder: (context) => TermsWidget());
-                //     setState(() {
-                //       _isChecked = value ?? false;
-                //     });
-                //   },
-                // ),
                 SizedBox(
                   height: 5,
                 ),

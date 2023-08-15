@@ -115,6 +115,12 @@ class AppText {
   static String notification= 'الاشعارات';
   static String notification_msg= 'تم استلام طلبك بنجاح. يمكنك مراجعة رقم '
   'رقم الطلب 150607# لمزيد من التفاصيل';
+  static String favorite = "المفضلة";
+
+  static String name = "محمد زياد النخالة";
+  static String company = "متجر الوكيل";
+
+
 
 
 

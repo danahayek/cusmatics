@@ -29,6 +29,8 @@ class ImagesPath {
   static String logoCat_png = "assets/images/logoCAT.png";
   static String logoCat_svg = "assets/images/logoCAT.svg";
 
+  static String person = "assets/images/person.png";
+
 
 
 

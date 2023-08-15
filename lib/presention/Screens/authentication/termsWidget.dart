@@ -1,11 +1,12 @@
+
 import 'package:flutter/material.dart';
-import 'package:untitled/presention/Screens/authentication/createAccount.dart';
+import 'package:untitled/presention/Screens/authentication/login.dart';
 
 import '../../../core/constant/Colors.dart';
 import '../../../core/constant/Strings.dart';
 import '../../../core/custom/button/buttonCustom.dart';
-import '../../../core/custom/text/boldText.dart';
-import 'login.dart';
+import 'createAccount.dart';
+
 
 class TermsWidget extends StatelessWidget {
   ScrollController? controllerScroll;
@@ -13,7 +14,7 @@ class TermsWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    String title="الشروط والأحكام";
+    String title = AppText.tearms;
     return Stack(
       children:[
         Positioned(child:  Padding(
@@ -21,21 +22,20 @@ class TermsWidget extends StatelessWidget {
           child: SingleChildScrollView(
             controller:controllerScroll ,
             child: Column(children: [
-              Text(style:TextStyle(fontWeight: FontWeight.bold,fontSize: 20),'الشروط والأحكام'),
-              SizedBox(height: 25,),
+              Text(style:const TextStyle(fontWeight: FontWeight.bold,fontSize: 20),AppText.tearms),
+              const SizedBox(height: 25,),
 
               Container(alignment: Alignment.center,child:  Text(AppText.tearms1,
-                textAlign: TextAlign.center,style: TextStyle(fontSize: 15,color: Colors.black87,)
+                textAlign: TextAlign.center,style: const TextStyle(fontSize: 15,color: AppColors.black,)
                 ,),),
-              SizedBox(height: 25,),
+              const SizedBox(height: 25,),
               Container(alignment: Alignment.center,child:  Text(AppText.tearm2,),),
-              SizedBox(height: 25,),
-
+              const SizedBox(height: 25,),
 
               Container(alignment: Alignment.center,child:  Text( AppText.tearm3
                 ,textAlign: TextAlign.center
                 ,),),
-              SizedBox(height: 25,),
+              const SizedBox(height: 25,),
 
               Container(alignment: Alignment.center,child:  Text( AppText.tearm4
                 ,textAlign: TextAlign.center
@@ -53,19 +53,19 @@ class TermsWidget extends StatelessWidget {
                 Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CreateAccount(),
+                    builder: (context) => login(),
                   ),
                 );
               },
-              text: 'ارسال',
+              text: AppText.send,
             ),
-            SizedBox(height: 3),
+            const SizedBox(height: 3),
             TextButton(onPressed: (){ Navigator.push(
               context,
               MaterialPageRoute(
                 builder: (context) => CreateAccount(),
               ),
-            );}, child: const Text("رجوع",style: TextStyle(color: Colors.pink),)),
+            );}, child:  Text(AppText.back,style: TextStyle(color: Colors.pink),)),
 
           ],),
 

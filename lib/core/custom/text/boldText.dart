@@ -15,7 +15,7 @@ class CustomText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
 
-      text,textAlign:textAlign,style: TextStyle(fontSize: fontSize,fontWeight: fontWeight,color: color),);
+      text,textAlign:textAlign,style: TextStyle(fontSize: fontSize,fontWeight: fontWeight,color: color,fontFamily: 'Tajawal'),);
   }
 }
 class SubTitleText extends StatelessWidget{
