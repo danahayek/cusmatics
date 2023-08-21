@@ -32,7 +32,7 @@ class CustomButtonLightpink extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(onPressed: onPressed,
         style: ElevatedButton.styleFrom(primary: Color(0xFFF59AA9),
-          padding: EdgeInsets.symmetric(horizontal: 135, vertical: 10),),
+          padding: EdgeInsets.symmetric(horizontal: 145, vertical: 12),),
         child: Text(text,
             style: TextStyle(color: Colors.white, fontSize: 13.5)));
   }
@@ -58,11 +58,8 @@ class CustomFilterBtn extends StatelessWidget {
         child: Center(
           child: IconButton(
             color: AppColors.white,
-              onPressed: onPressed,
-              style: ElevatedButton.styleFrom(primary: Color(0xFFF59AA9),
-                padding: EdgeInsets.symmetric(horizontal: 145, vertical: 12),),
-              icon: prefixIcon,
-
+            onPressed: onPressed,
+            icon: prefixIcon,
           ),
         ),
       ),

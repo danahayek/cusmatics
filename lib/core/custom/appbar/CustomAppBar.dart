@@ -12,7 +12,6 @@ import '../container/customC.dart';
 
 class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
   String title;
-
   CustomAppBar(this.title);
 
   @override
@@ -70,23 +69,6 @@ class CustomAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
         ),
       ],
-
-     /* leading:Padding(
-        padding: EdgeInsets.only(right: 10.0, bottom: 8.0),
-        child: Row( // Wrap the CustomContainer and title in a Row
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            CustomContainer(Icon(Icons.notifications_none, color: AppColors.black, size: 25)),
-            SizedBox(width: 15,),
-            CustomContainer(Icon(Icons.favorite_border, color: AppColors.black, size: 25)),
-            SizedBox(width: 100), // Add some spacing between the elements
-            Text(
-              title,
-              style: TextStyle(fontSize: 26),
-            ),
-          ],
-        ),
-      ),*/
     );
   }
 
@@ -118,7 +100,7 @@ class CustomAppBar2 extends StatelessWidget implements PreferredSizeWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => CartScreen(),
+                      builder: (context) => cartScreen(),
                     ),
                   );
                 },

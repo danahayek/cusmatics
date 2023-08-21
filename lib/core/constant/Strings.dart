@@ -122,6 +122,12 @@ class AppText {
 
 
 
+  static String cart = "سلة التسوق";
+  static String total = "الإجمالي ";
+  static String addOrder = "إرسال الطلبية";
+  static String cleanCart = "إفراغ السلة";
+
+
 
 
 

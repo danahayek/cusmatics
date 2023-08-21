@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 import '../../../../core/constant/Colors.dart';
 import '../../../../core/constant/Strings.dart';
 import '../../../../core/custom/appbar/CustomAppBar.dart';
+import '../../../../core/featuers/CategoryProducts/ProductProvider.dart';
+import '../../../../core/featuers/CategoryProducts/ProductUi.dart';
 import '../../../../core/model/CategoryTypes.dart';
 import 'DetailScreen3.dart';
 class DetailScreen2 extends StatefulWidget {
@@ -14,6 +17,8 @@ class DetailScreen2 extends StatefulWidget {
 }
 
 class _DetailScreen2State extends State<DetailScreen2> {
+  late ProductProvider  productProvider = Provider.of<ProductProvider>(context, listen: false) ;
+
 
   final List<CategoryTypes2> category_types=[
     CategoryTypes2(AppText.homefurniture),
@@ -56,10 +61,12 @@ class _DetailScreen2State extends State<DetailScreen2> {
                   children: [
 
                     GestureDetector(onTap: (){
+                      Future.delayed(Duration(seconds: 2));
+                      productProvider.refreshList();
                       Navigator.push(
                         context,
                         MaterialPageRoute(
-                          builder: (context) => DetailScreen3(itemIndex: index),
+                          builder: (context) => CategoryProduct(),
                         ),
                       );
                     },

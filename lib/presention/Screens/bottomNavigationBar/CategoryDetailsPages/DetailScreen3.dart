@@ -1,18 +1,17 @@
 
 import 'package:draggable_bottom_sheet/draggable_bottom_sheet.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:untitled/core/custom/appbar/CustomAppBar.dart';
 import 'package:untitled/core/custom/button/CustomSearch.dart';
 import 'package:untitled/core/custom/container/customC.dart';
+import 'package:untitled/core/featuers/CategoryProducts/ProductProvider.dart';
 
 import '../../../../core/constant/Colors.dart';
-import '../../../../core/constant/ImagesPath.dart';
 import '../../../../core/constant/Strings.dart';
 import '../../../../core/custom/button/buttonCustom.dart';
 import '../../../../core/custom/container/CustomProductItem.dart';
-import '../../../../core/custom/gridView/CustomCategoryGrid.dart';
 import '../../../../core/custom/gridView/RadioButton.dart';
-import '../../../../core/model/category.dart';
 import 'DetailScreen4.dart';
 
 class DetailScreen3 extends StatefulWidget {
@@ -26,20 +25,35 @@ class DetailScreen3 extends StatefulWidget {
 
 class _DetailScreen3State extends State<DetailScreen3> {
   final TextEditingController controller = TextEditingController();
+  late ProductProvider furnitureDataProvider = Provider.of<ProductProvider>(context,listen: false);
 
-  final List<CategoryModel> items = [
-    CategoryModel(ImagesPath.table3, AppText.table3, '55', '56', AppText.city),
-    CategoryModel(ImagesPath.coffee_table, AppText.coffee_table, '55', '56', AppText.city),
-    CategoryModel(ImagesPath.sofa, AppText.sofa, '55', '56', AppText.city),
-    CategoryModel(ImagesPath.shoes_table, AppText.shoes_table, '55', '56', AppText.city),
-    CategoryModel(ImagesPath.chairK, AppText.chairK, '55', '56', AppText.city),
-    CategoryModel(ImagesPath.sofa, AppText.sofa, '55', '56', AppText.city),
-  ];
+
+  // final List<CategoryModel> items = [
+  //   CategoryModel(ImagesPath.table3, AppText.table3, '55', '56', AppText.city),
+  //   CategoryModel(ImagesPath.coffee_table, AppText.coffee_table, '55', '56', AppText.city),
+  //   CategoryModel(ImagesPath.sofa, AppText.sofa, '55', '56', AppText.city),
+  //   CategoryModel(ImagesPath.shoes_table, AppText.shoes_table, '55', '56', AppText.city),
+  //   CategoryModel(ImagesPath.chairK, AppText.chairK, '55', '56', AppText.city),
+  //   CategoryModel(ImagesPath.sofa, AppText.sofa, '55', '56', AppText.city),
+  // ];
+
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    furnitureDataProvider.getDate();
+
+  }
 
   int selectedValue = 1;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    final  productList = furnitureDataProvider.items;
+
+
+  return Scaffold(
         appBar: CustomAppBar(AppText.homefurniture),
         backgroundColor: AppColors.white,
         body :  Column(
@@ -77,7 +91,7 @@ class _DetailScreen3State extends State<DetailScreen3> {
                 mainAxisSpacing: 15.0, // Spacing between rows
                 crossAxisSpacing: 15.0, // Spacing between columns
               ),
-                  itemCount: items.length,
+                  itemCount: productList.length,
 
                 itemBuilder: (BuildContext context, int index) {
                     return
@@ -88,7 +102,7 @@ class _DetailScreen3State extends State<DetailScreen3> {
                             builder: (context) => DetailScreen4(),
                           ),
                         );
-                      },child: CustomProductItem(items[index],220,233));
+                      },child: CustomProductItem(productList[index],220,233));
                   },),
             )
           ],

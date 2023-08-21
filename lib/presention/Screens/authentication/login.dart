@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:untitled/presention/Screens/Home/HomeScreen.dart';
 
 import 'package:untitled/presention/Screens/authentication/ConfirmAccount.dart';
@@ -21,8 +22,8 @@ class login extends StatefulWidget {
 }
 
 class _loginState extends State<login> {
-  final TextEditingController textEditingController1 = TextEditingController();
-  final TextEditingController textEditingController2 = TextEditingController();
+  final TextEditingController user_email = TextEditingController();
+  final TextEditingController password_email = TextEditingController();
 
   final _numberFormatter = FilteringTextInputFormatter.digitsOnly;
   bool _isObscured = true;
@@ -89,7 +90,7 @@ class _loginState extends State<login> {
                     children: [
                       Padding(
                         child:textformfield(
-                          controller: textEditingController1,
+                          controller: user_email,
                           maxLength: 10,
                           keyboardInput: TextInputType.phone,
                           validator: (value) {
@@ -115,7 +116,7 @@ class _loginState extends State<login> {
                         padding: const EdgeInsets.only(left:15.0,right: 15.0),
 
                         child: textformfield(
-                          controller: textEditingController2,
+                          controller: password_email,
                           obscureText: _isObscured,
                             validator: (value) {
                               if (value!.isEmpty && value.length < 6) {
@@ -166,7 +167,7 @@ class _loginState extends State<login> {
                 ),
                 SizedBox(height: 20),
                 CustomButtonPink(
-                  onPressed:   _submitForm,
+                  onPressed:  _submitForm,
                   text:AppText.signup,
                 ),
                 SizedBox(height: 14),

@@ -35,22 +35,6 @@ class _HomeScreenState extends State<HomeScreen> {
     CategoryModel(ImagesPath.chairsC, AppText.radio, '66', '56', AppText.city),
   ];
   late final CategoryModel _category;
-
-  // List<String> search= [];
-  // void _runFilter(String enteredKeyword) {
-  //   List<Map<String, dynamic>> results = [];
-  //   if (enteredKeyword.isEmpty) {
-  //     // if the search field is empty or only contains white-space, we'll display all users
-  //     results = search;
-  //   } else {
-  //     results = search
-  //         .where((user) =>
-  //         user["name"].toLowerCase().contains(enteredKeyword.toLowerCase()))
-  //         .toList();
-  //     // we use the toLowerCase() method to make it case-insensitive
-  //   }
-  //
-  // }
   @override
   Widget build(BuildContext context) {
     return Scaffold(

@@ -44,27 +44,30 @@ class _ConfirmAccountState extends State<ConfirmAccount> {
                 SizedBox(
                   height: 25,
                 ),
-                PinCodeTextField(
-                  appContext: context,
-                  length: 4, // Set the length of the code
-                  onChanged: (value) {
-                    // Handle code changes
-                    print('Code changed: $value');
-                  },
-                  onCompleted: (value) {
-                    // Handle code submission
-                    print('Code submitted: $value');
-                  },
-                  // Customize the appearance of the input field
-                  pinTheme: PinTheme(
-                    shape: PinCodeFieldShape.box,
-                    borderRadius: BorderRadius.circular(8),
-                    fieldHeight: 80,
-                    fieldWidth: 80,
-                    activeFillColor: Colors.white,
-                    activeColor: Colors.blue,
-                    selectedColor: Colors.blue,
-                    inactiveColor: Colors.grey,
+                Padding(
+                  padding: const EdgeInsets.all(10.0),
+                  child: PinCodeTextField(
+                    appContext: context,
+                    length: 4, // Set the length of the code
+                    onChanged: (value) {
+                      // Handle code changes
+                      print('Code changed: $value');
+                    },
+                    onCompleted: (value) {
+                      // Handle code submission
+                      print('Code submitted: $value');
+                    },
+                    // Customize the appearance of the input field
+                    pinTheme: PinTheme(
+                      shape: PinCodeFieldShape.box,
+                      borderRadius: BorderRadius.circular(8),
+                      fieldHeight: 80,
+                      fieldWidth: 80,
+                      activeFillColor: Colors.white,
+                      activeColor: Colors.blue,
+                      selectedColor: Colors.blue,
+                      inactiveColor: Colors.grey,
+                    ),
                   ),
                 ),
                 SizedBox(
