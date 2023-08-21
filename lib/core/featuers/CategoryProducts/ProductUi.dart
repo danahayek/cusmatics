@@ -28,7 +28,6 @@ class _CategoryProductState extends State<CategoryProduct> {
 
   int selectedValue = 1;
   String title = '';
-  List<Map<String, dynamic>> products = [];
 
   @override
   void initState() {
@@ -37,25 +36,7 @@ class _CategoryProductState extends State<CategoryProduct> {
     fetchApiData();
   }
 
-  Future<void> fetchApiData() async {
-    Dio dio = Dio();
 
-    try {
-      Response response = await dio.get('https://fakestoreapi.com/products');
-
-      if (response.statusCode == 200) {
-        List<dynamic> responseData = response.data;
-
-        setState(() {
-          products = List<Map<String, dynamic>>.from(responseData);
-        });
-      } else {
-        print('Request failed with status: ${response.statusCode}');
-      }
-    } catch (error) {
-      print('Error: $error');
-    }
-  }
 
   @override
   Widget build(BuildContext context) {
@@ -107,7 +88,7 @@ class _CategoryProductState extends State<CategoryProduct> {
           mainAxisSpacing: 15.0,
           crossAxisSpacing: 15.0,
         ),
-        itemCount: products.length,
+        itemCount: productProvider.items.length,
         itemBuilder: (BuildContext context, int index) {
     final product = productProvider.items[index];
 

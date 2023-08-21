@@ -1,3 +1,4 @@
+import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/core/featuers/CategoryProducts/ProductEnum.dart';
 
@@ -54,23 +55,27 @@ class ProductProvider extends ChangeNotifier{
   //get data
   Future<void> getDate() async {
     try{
+      Dio dio = Dio();
+        Response response = await dio.get('https://fakestoreapi.com/products');
 
-      await Future.delayed(Duration(seconds: 3));
-      final List<CategoryModel> _items = [
-        CategoryModel(ImagesPath.table3, AppText.table3, '55', '56', AppText.city),
-        CategoryModel(ImagesPath.coffee_table, AppText.coffee_table, '55', '56', AppText.city),
-        CategoryModel(ImagesPath.sofa, AppText.sofa, '55', '56', AppText.city),
-        CategoryModel(ImagesPath.shoes_table, AppText.shoes_table, '55', '56', AppText.city),
-        CategoryModel(ImagesPath.chairK, AppText.chairK, '55', '56', AppText.city),
-        CategoryModel(ImagesPath.sofa, AppText.sofa, '55', '56', AppText.city),
-      ];
-      items.addAll(_items);
+        if (response.statusCode == 200) {
+        List<CategoryModel>  _items  = items =response.data.map((x) => CategoryModel.fromJson(x)).toList();
+        items.addAll(_items);
+
+          if(items.isEmpty){
+            errorType=PageState.dataNotFound;
+          }else{
+            errorType=PageState.showData;
+          }
+
+        }
+
+
 
       if(items.isEmpty){
         errorType=PageState.dataNotFound;
       }else{
         errorType=PageState.showData;
-
       }
     }catch(e){
       errorType=PageState.pageError;

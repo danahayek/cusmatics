@@ -118,7 +118,8 @@ class _CustomProductItemState extends State<CustomProductItem> {
                                       color: AppColors.lightPink,
                                     ),
 
-                                    child: const Center(child: Text ("%20" ,textAlign: TextAlign.center,style: TextStyle(
+                                    child: const Center(child: Text(product['rating'] ,
+                                        textAlign: TextAlign.center,style: TextStyle(
                                       color: AppColors.white,
                                       fontWeight: FontWeight.normal,)),
                                     ),
@@ -127,12 +128,12 @@ class _CustomProductItemState extends State<CustomProductItem> {
                               ),
                             ],),
                           const SizedBox(width: 5,),
-                          Image.asset(widget.product.image,width: 75,height: 75,),
+                          Image.asset(widget.product['image'],width: 75,height: 75,),
                         ],),
                       ]),
                   Padding(
                     padding: const EdgeInsets.all(5.0),
-                    child: CustomText(text:product['title'], fontWeight: FontWeight.bold, fontSize: 18),
+                    child: CustomText(text:widget.product['title'], fontWeight: FontWeight.bold, fontSize: 18),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(5.0),
@@ -151,7 +152,7 @@ class _CustomProductItemState extends State<CustomProductItem> {
                         SvgPicture.asset(ImagesPath.shekel, width: 15,height: 10,),
                         const SizedBox(width: 3),
                         Text(
-                          widget.product.price as String,
+                          widget.product['price'] as String,
                           style: const TextStyle(fontSize: 17, fontWeight: FontWeight.bold,color: AppColors.pink),
                         ),
                       ],),
