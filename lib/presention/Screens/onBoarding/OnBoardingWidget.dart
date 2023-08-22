@@ -8,6 +8,7 @@ import '../../../core/constant/Colors.dart';
 import '../../../core/constant/ImagesPath.dart';
 import '../../../core/constant/Strings.dart';
 import '../authentication/login.dart';
+import '../bottomNavigationBar/BottomNavBar.dart';
 import 'boardingWidget/onBoardingWidget.dart';
 class onBoardingScreen extends StatefulWidget {
   @override
@@ -80,7 +81,7 @@ class _onBoardingScreenState extends State<onBoardingScreen> {
                     if((splashData.length -1) == value){
                       Navigator.push(context,
                         MaterialPageRoute(
-                            builder: (context)=> login()),
+                            builder: (context)=> NavigationBarScreen()),
                       );
                     }
                     setState(() {

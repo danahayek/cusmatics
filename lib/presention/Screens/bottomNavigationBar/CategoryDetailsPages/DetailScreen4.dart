@@ -8,7 +8,8 @@ import 'package:untitled/core/custom/button/buttonCustom.dart';
 import 'package:untitled/core/custom/text/boldText.dart';
 
 import '../../../../core/custom/container/CustomHomeProductItem.dart';
-import '../../../../core/model/category.dart';
+import '../../../../core/model/CategoryTypes.dart';
+import '../../../../core/model/ProductItems.dart';
 class DetailScreen4 extends StatefulWidget {
   const DetailScreen4({Key? key}) : super(key: key);
 
@@ -17,10 +18,11 @@ class DetailScreen4 extends StatefulWidget {
 }
 
 class _DetailScreen4State extends State<DetailScreen4> {
-  final List<CategoryModel> c = [
-    CategoryModel(ImagesPath.radioC, AppText.radio, '66', '56', AppText.city),
-    CategoryModel(ImagesPath.babiesC, AppText.babies, '66', '56', AppText.city),
-    CategoryModel(ImagesPath.chairsC, AppText.radio, '66', '56', AppText.city),
+
+  final List<ProductItems> c = [
+    ProductItems(ImagesPath.radioC, AppText.radio, '66', '56', AppText.city),
+    ProductItems(ImagesPath.babiesC, AppText.babies, '66', '56', AppText.city),
+    ProductItems(ImagesPath.chairsC, AppText.chairK, '66', '56', AppText.city),
   ];
   @override
   Widget build(BuildContext context) {

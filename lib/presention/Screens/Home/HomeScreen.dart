@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:untitled/core/constant/ImagesPath.dart';
 import 'package:untitled/core/custom/text/boldText.dart';
+import 'package:untitled/core/model/Product.dart';
 
 import '../../../core/constant/Colors.dart';
 import '../../../core/constant/Strings.dart';
@@ -8,10 +9,11 @@ import '../../../core/custom/button/CustomSearch.dart';
 import '../../../core/custom/container/CustomHomeProductItem.dart';
 import '../../../core/custom/container/catergoryCustom.dart';
 import '../../../core/custom/container/customC.dart';
-import '../../../core/model/category.dart';
-import '../../../core/model/category.dart';
-import '../../../core/model/product.dart';
+import '../../../core/model/Category.dart';
+import '../../../core/model/ProductItems.dart';
 import '../bottomNavigationBar/BottomNavBar.dart';
+import 'favorite.dart';
+
 class HomeScreen extends StatefulWidget {
   @override
   State<HomeScreen> createState() => _HomeScreenState();
@@ -20,21 +22,21 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   final TextEditingController controller = TextEditingController();
 
-  final List<Product> category = [
-    Product(1,AppText.beauty,ImagesPath.beauty),
-    Product(2,AppText.baby,ImagesPath.baby),
-    Product(3,AppText.jewelry,ImagesPath.jewelry),
-    Product(4,AppText.nature,ImagesPath.nature),
-    Product(5,AppText.pharmacy,ImagesPath.pharmacy),
-    Product(6,AppText.eyes,ImagesPath.eye),
+  final List<ProductCategory> category = [
+    ProductCategory(1,AppText.beauty,ImagesPath.beauty),
+    ProductCategory(2,AppText.baby,ImagesPath.baby),
+    ProductCategory(3,AppText.jewelry,ImagesPath.jewelry),
+    ProductCategory(4,AppText.nature,ImagesPath.nature),
+    ProductCategory(5,AppText.pharmacy,ImagesPath.pharmacy),
+    ProductCategory(6,AppText.eyes,ImagesPath.eye),
   ];
 
-  final List<CategoryModel> c = [
-    CategoryModel(ImagesPath.radioC, AppText.radio, '66', '56', AppText.city),
-    CategoryModel(ImagesPath.babiesC, AppText.babies, '66', '56', AppText.city),
-    CategoryModel(ImagesPath.chairsC, AppText.radio, '66', '56', AppText.city),
+  final List<ProductItems> c = [
+    ProductItems(ImagesPath.radioC, AppText.radio, '66', '56', AppText.city),
+    ProductItems(ImagesPath.babiesC, AppText.babies, '66', '56', AppText.city),
+    ProductItems(ImagesPath.chairsC, AppText.radio, '66', '56', AppText.city),
   ];
-  late final CategoryModel _category;
+  late final ProductItems _category;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -50,11 +52,11 @@ class _HomeScreenState extends State<HomeScreen> {
                     const SizedBox(
                       width: 10,
                     ),
-                     CustomContainer(Icon(Icons.notifications_active, color: AppColors.black, size: 30,),AppColors.lightGray,50,50),
+                    CustomContainer(Icon(Icons.notifications_active, color: AppColors.black, size: 30,),AppColors.lightGray,50,50),
                     const SizedBox(width: 8,),
-                     CustomContainer(Icon(Icons.favorite_border, color: AppColors.black, size: 30,),AppColors.lightGray,50,50),
+                    CustomContainer(Icon(Icons.favorite_border, color: AppColors.black, size: 30,),AppColors.lightGray,50,50),
                     const SizedBox(width: 8,),
-                     CustomContainer(Icon(Icons.notifications_none, color: AppColors.black, size: 30,),AppColors.lightGray,50,50),
+                    CustomContainer(Icon(Icons.notifications_none, color: AppColors.black, size: 30,),AppColors.lightGray,50,50),
                     const SizedBox(width: 100,),
                     Image.asset(ImagesPath.splashImage, width: 75, height: 75,),
                   ],

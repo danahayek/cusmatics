@@ -1,15 +1,21 @@
 
 import 'package:flutter/material.dart';
 import 'package:untitled/core/custom/text/boldText.dart';
-import 'package:untitled/core/model/category.dart';
 
 import '../../constant/Strings.dart';
+import '../../model/Product.dart';
+import '../../model/ProductItems.dart';
 import 'CustomProductItem.dart';
 class CustomHomeProductItem extends StatelessWidget{
 
-  List<CategoryModel>? items;
+  List<ProductItems>? items;
   String? title;
   CustomHomeProductItem({this.items , this.title});
+
+  var isLoaded = false;
+
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -36,13 +42,13 @@ class CustomHomeProductItem extends StatelessWidget{
           height: 250,
           child: ListView.builder(
             itemBuilder:(context, index) {
-              CategoryModel product = items![index];
+              ProductItems product = items![index];
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: InkWell(
                   onTap: () {},
                   child: Row(children: [
-                    CustomProductItem(product, 170,200,)
+                   // CustomProductItem(product , 170,200,)
                   ]),
                 ),
               );
@@ -52,6 +58,4 @@ class CustomHomeProductItem extends StatelessWidget{
           ),
         )
       ],);
-  }
-
-}
+  }}

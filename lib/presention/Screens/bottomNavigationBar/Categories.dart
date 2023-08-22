@@ -8,7 +8,7 @@ import '../../../core/constant/ImagesPath.dart';
 import '../../../core/constant/Strings.dart';
 import '../../../core/custom/appbar/CustomAppBar.dart';
 import '../../../core/custom/gridView/CustomCategoryGrid.dart';
-import '../../../core/model/product.dart';
+import '../../../core/model/Category.dart';
 import 'CategoryDetailsPages/DetailCategory.dart';
 
 
@@ -21,12 +21,13 @@ class Categories extends StatefulWidget{
 }
 
 class _CategoriesState extends State<Categories> {
-  final List<Product> grid_items = [
-    Product(1,AppText.beauty,ImagesPath.beauty),
-    Product(2,AppText.baby,ImagesPath.baby),
-    Product(3,AppText.eyes,ImagesPath.eye),
-
-
+  final List<ProductCategory> category = [
+    ProductCategory(1,AppText.beauty,ImagesPath.beauty),
+    ProductCategory(2,AppText.baby,ImagesPath.baby),
+    ProductCategory(3,AppText.accessories,ImagesPath.jewelry),
+    ProductCategory(4,AppText.nature,ImagesPath.nature),
+    ProductCategory(5,AppText.pharmacy,ImagesPath.pharmacy),
+    ProductCategory(6,AppText.eyes,ImagesPath.eye),
   ];
 
   @override
@@ -39,10 +40,10 @@ class _CategoriesState extends State<Categories> {
           SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2, // Number of columns in the grid
           ),
-          itemCount: grid_items.length ,
+          itemCount: category.length ,
           itemBuilder:
               (BuildContext context, int index){
-            final gridItems = grid_items[index];
+            final gridItems = category[index];
             return GestureDetector(
               onTap: (){
               Navigator.push(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:untitled/core/constant/ImagesPath.dart';
 
 import '../../../../core/constant/Colors.dart';
 import '../../../../core/constant/Strings.dart';
@@ -7,6 +8,7 @@ import '../../../../core/custom/appbar/CustomAppBar.dart';
 import '../../../../core/featuers/CategoryProducts/ProductProvider.dart';
 import '../../../../core/featuers/CategoryProducts/ProductUi.dart';
 import '../../../../core/model/CategoryTypes.dart';
+import '../../../../core/model/ProductItems.dart';
 import 'DetailScreen3.dart';
 class DetailScreen2 extends StatefulWidget {
   final int itemIndex;
@@ -20,12 +22,16 @@ class _DetailScreen2State extends State<DetailScreen2> {
   late ProductProvider  productProvider = Provider.of<ProductProvider>(context, listen: false) ;
 
 
-  final List<CategoryTypes2> category_types=[
-    CategoryTypes2(AppText.homefurniture),
-    CategoryTypes2(AppText.office),
-    CategoryTypes2(AppText.garden),
-    CategoryTypes2(AppText.accessories),
-    CategoryTypes2(AppText.decoration),
+  final List<CategoryTypes> category_types=[
+    CategoryTypes(AppText.clothsCat),
+    CategoryTypes(AppText.furnitureCat),
+    CategoryTypes(AppText.electronicCat),
+    CategoryTypes(AppText.baby),
+    CategoryTypes(AppText.carsCat),
+    CategoryTypes(AppText.apartmentsCat),
+    CategoryTypes(AppText.sellersCat),
+    CategoryTypes(AppText.donationsCat),
+
 
   ];
   @override
@@ -55,14 +61,13 @@ class _DetailScreen2State extends State<DetailScreen2> {
               separatorBuilder: (BuildContext context, int index) => Divider(height: 20,thickness: 8,color: AppColors.lightGray,),
               itemCount: category_types.length, // Number of list items
               itemBuilder: (BuildContext context, int index) {
-                final item = category_types[index];
+                final item = category_types   [index];
 
                 return Column(
                   children: [
 
                     GestureDetector(onTap: (){
                       Future.delayed(Duration(seconds: 2));
-                      productProvider.refreshList();
                       Navigator.push(
                         context,
                         MaterialPageRoute(
@@ -74,7 +79,7 @@ class _DetailScreen2State extends State<DetailScreen2> {
                       title: Align(
                           alignment: Alignment.centerRight,
                           child: Text(
-                            item.title2, // Replace with your title
+                            item.title, // Replace with your title
                             style: TextStyle(fontSize: 20,fontWeight: FontWeight.bold),
                           )
                       ),

@@ -2,13 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 import '../../constant/Colors.dart';
-import '../../model/product.dart';
+import '../../model/Category.dart';
 class CustomCategoryContainer extends StatelessWidget{
 
 
-  final Product product;
+  final ProductCategory category;
 
-  CustomCategoryContainer(this.product);
+  CustomCategoryContainer(this.category);
 
   @override
   Widget build(BuildContext context) {
@@ -22,9 +22,9 @@ class CustomCategoryContainer extends StatelessWidget{
       child: Center(
         child: Column(children: [
           SizedBox(height: 10,),
-          SvgPicture.asset(product.image as String, width: 40, height: 40, color: AppColors.white,),
+          SvgPicture.asset(category.image as String, width: 40, height: 40, color: AppColors.white,),
           SizedBox(height: 7,),
-          Text(product.title, style: TextStyle(color: AppColors.white, fontSize: 16),),
+          Text(category.title, style: TextStyle(color: AppColors.white, fontSize: 16),),
 
         ],),
       ),

@@ -5,9 +5,4 @@ enum PageState {
   dataLoading,
   pageError,
   networkProblem,
- /* pageNotFound,
-  networkError,
-  noData,
-  loading,
-  dataLoaded,*/
 }

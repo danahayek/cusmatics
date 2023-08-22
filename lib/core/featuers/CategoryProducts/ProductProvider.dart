@@ -2,17 +2,15 @@ import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:untitled/core/featuers/CategoryProducts/ProductEnum.dart';
 
-import '../../constant/ImagesPath.dart';
-import '../../constant/Strings.dart';
-import '../../model/category.dart';
-import '../../model/product.dart';
 
-class ProductProvider extends ChangeNotifier{
-  bool _isLoading = false;
+import '../../model/Product.dart';
+import 'ProductUi.dart';
 
-  List<CategoryModel> items = [];
+class ProductProvider extends ChangeNotifier {
+  List<Product> items = [];
 
-  PageState errorType=PageState.dataLoading;
+  PageState errorType = PageState.dataLoading;
+
   String getErrorMessage(PageState errorType) {
     switch (errorType) {
       case PageState.showData:
@@ -35,54 +33,32 @@ class ProductProvider extends ChangeNotifier{
     }
   }
 
-  // fetch reload
-  Future<void> reloadData() async {
-    await Future.delayed(Duration(seconds: 2)); // Simulate loading for 2 seconds
-
-    items.shuffle();
-    notifyListeners();
-  }
-  Future<void> refreshList() async {
-    _isLoading = true;
-    notifyListeners();
-
-    await Future.delayed(Duration(seconds: 2)); // Simulate loading for 2 seconds
-
-    items.shuffle();
-    _isLoading = false;
-    notifyListeners();
-  }
-  //get data
   Future<void> getDate() async {
-    try{
+    try {
       Dio dio = Dio();
-        Response response = await dio.get('https://fakestoreapi.com/products');
+      Response response = await dio.get('https://fakestoreapi.com/products');
 
-        if (response.statusCode == 200) {
-        List<CategoryModel>  _items  = items =response.data.map((x) => CategoryModel.fromJson(x)).toList();
+      if (response.statusCode == 200) {
+        List<Product> _items = (response.data as List).map((x) => Product.fromJson(x)).toList();
         items.addAll(_items);
 
-          if(items.isEmpty){
-            errorType=PageState.dataNotFound;
-          }else{
-            errorType=PageState.showData;
-          }
-
+        if (items.isEmpty) {
+          errorType = PageState.dataNotFound;
+        } else {
+          errorType = PageState.showData;
         }
-
-
-
-      if(items.isEmpty){
-        errorType=PageState.dataNotFound;
-      }else{
-        errorType=PageState.showData;
       }
-    }catch(e){
-      errorType=PageState.pageError;
+      if (items.isEmpty) {
+        errorType = PageState.dataNotFound;
+      } else {
+        errorType = PageState.showData;
+      }
+      notifyListeners();
 
+    } catch (e) {
+      errorType = PageState.pageError;
     }
-    notifyListeners();
-    print("errorType $errorType");
-  }
 
+    print("errorTypennn $errorType");
+  }
 }

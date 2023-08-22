@@ -1,11 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import '../../constant/Colors.dart';
-import '../../model/category.dart';
-import '../../model/product.dart';
+import '../../model/Category.dart';
 
 class CustomCategoryGrid extends StatelessWidget {
-    Product pro;
+  ProductCategory pro;
 
    CustomCategoryGrid(this.pro);
 
